@@ -144,6 +144,23 @@ ends_with_a = True if word1 ends with "a" or "A"
 has_the_word_python = True if the sentence contains "python"'''
 
 # ===========================================================
+def data(word1, word2, word3, n1,n2):
+    output1 = word1+" "+ word2
+    output2= word1[0:4] + "-" + word2[-4:]      # don't write word2[-4:-1]
+    output3 = word3 + " " + str(n1)
+    output4 = "-" * 50
+    output5 = "-" * n2
+    output6 = str(n1) * n2
+    return output1, output2, output3, output4, output5, output6
+
+word1 = "Birendra"
+word2 = "AjayBalmiki"
+word3 = "Elon"
+n = 5
+n2 = 2
+
+print(data(word1, word2, word3, n,n2))
+
 '''🟥 PART 8 — Date parsing (dob) & birthdays
 
 Input:
@@ -157,7 +174,15 @@ last_birthday = dob but year + age (dd/mm/yyyy)
 tenth_month = dob advanced by 10 months (dd/mm/yyyy)
 No need to worry about zero-padding, write natural formatting.'''
 # ===========================================================
+def Birth_data(age, dob):
+    year = dob[-2:]
+    fifth_birthday = int(year) + 5
+    last_birthday = year + "age"
+    return f"{fifth_birthday}, \n{last_birthday}"
 
+age = 20
+dob = "04/06/05"
+print(Birth_data(age, dob))
 # ===========================================================
 '''🟩 PART 9 — Weight formatting
 Given:
