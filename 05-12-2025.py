@@ -195,7 +195,18 @@ Where:
 integer part = kg
 decimal part × 1000 = grams (rounded to nearest int)'''
 
+def weight_read(weight):
+    kg_wgt = int(weight)
+    decimal_wgt = weight - kg_wgt
+    gram_wgt = f"{decimal_wgt * 1000:.2f}"          # it is use to round of the gram value up to 2 decimal point
+    weight_readable = f"{kg_wgt} kg {gram_wgt} grams"
+    return (weight_readable)
+
+weight_readable = 52.247 
+print(weight_read(weight_readable))
+
 # ===========================================================
+
 '''🟦 FINAL OUTPUT REQUIREMENTS
 
 Print output in this exact order, each on a new line:
