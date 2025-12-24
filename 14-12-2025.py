@@ -43,6 +43,7 @@ def swap(word_1, word_2):
     word_2 = word
     L2 = word_1 + word_2     # Now word_1 = Elon nad word_2 = Hello
     return L1, L2
+
 # ======================================================
 """🟦 QUESTION 3 — Chained Assignment Result
 Problem Statement
@@ -68,9 +69,39 @@ def chaining(a,b,c):
     return x,y,z
 
 print(chaining(4,7,8))
-
-
-
-
+    # but here we copy a,b,c first
+    # why do we copy a,b,c first if we throw away it at the end?
+        # so we need a better version to not do redundant work
 
 # ======================================================
+"""🟦 QUESTION 4 — Integer Casting with Negatives
+Problem Statement
+You are given a floating-point number x.
+
+Print:
+The integer value obtained by converting x to an integer.
+The integer value obtained by converting -x to an integer.
+
+Input Format
+A single floating-point number:x
+
+Output Format
+Print two lines:
+int(x)
+int(-x)
+
+Example
+Input: 3.75
+Output: 
+3
+-3
+"""
+
+def flt_num(x):
+    return int(x), int(-x)
+
+x = 3.75
+print(flt_num((x)))     # it gives answer in tuple format
+a,b = flt_num(x)        # unpacking the output from tuble so that we return in next line
+print(a)
+print(b)
