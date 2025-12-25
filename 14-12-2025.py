@@ -101,7 +101,144 @@ def flt_num(x):
     return int(x), int(-x)
 
 x = 3.75
-print(flt_num((x)))     # it gives answer in tuple format
-a,b = flt_num(x)        # unpacking the output from tuble so that we return in next line
-print(a)
-print(b)
+print(flt_num((x)))      # it gives answer in tuple format
+pos_val,neg_val = flt_num(x)        # unpacking the output from tuble so that we return in next line
+print(pos_val)
+print(neg_val)
+# ====================================================================
+
+""" 🟦 QUESTION 5 — Boolean Shortcut Check
+Problem Statement
+You are given a boolean value flag.
+
+If flag is True, print:
+works
+Otherwise, print nothing.
+
+⚠️ You must use only:
+if flag:
+Input Format
+
+A string that is either:
+True
+or
+False
+
+Output Format
+Print:
+works
+
+(if applicable)
+
+Example
+Input: True
+Output: works
+"""
+
+def check_bool(flag):
+    if flag:
+        print("works")
+    
+s = input().strip()  
+flag = (s == "True")
+(check_bool(flag))
+
+# ==============================================================
+""" 🟦 QUESTION 6 — Safe Variable Printing
+Problem Statement
+You are given three boolean values E1, E2, and E3.
+Execute the following logic:
+
+if E1:
+    x = 1
+if E2:
+    x = 2
+if E3:
+    x = 3
+print(x)
+
+If printing x causes an error (because it was never defined), print:
+Error
+Otherwise, print the value of x.
+
+Input Format
+Three lines:
+E1
+E2
+E3
+(each is True or False)
+
+Output Format
+Print either:
+x
+or
+Error
+
+Example:
+    Input
+        False
+        False
+        False
+
+Output
+Error"""
+
+def bool_val(E1,E2,E3):     # E1, E2, E3 contain boolean value 
+    x = None        # Lets assume x doesn't contain anything initially/ x is empty(better comment)
+
+    if E1:
+        x = 1
+    if E2:
+        x = 2
+    if E3:
+        x = 3
+
+    if x is None:      # if x in None it means E1,E2,E3 contain False bool value
+        print("Error")
+    else:               # print final x value
+        print(x)
+    
+bool_val(False, True, False)
+# =============================================================
+"""🟦 QUESTION 7 — Print a Backslash
+Problem Statement
+Print a single backslash character (\) to the output.
+
+Input Format
+No input.
+
+Output Format: \
+"""
+print("\\")     # Double backlash is use to print single backslash
+# ===================================================
+"""
+🟦 QUESTION 8 — Name Validator
+Problem Statement
+You are given a string name.
+
+A name is valid if:
+It contains only alphabets
+It contains no spaces
+
+Print:
+Valid
+or
+Invalid
+
+Input Format
+A single string:
+name
+
+Example
+Input: Rohit
+Output: Valid
+"""
+def check_valid_name(name):
+    if name.isalpha():
+        print("Valid")
+    else:
+        print("invalid")
+
+n = "Rohit"
+check_valid_name(n)
+    
