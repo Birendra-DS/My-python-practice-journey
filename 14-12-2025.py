@@ -241,4 +241,50 @@ def check_valid_name(name):
 
 n = "Rohit"
 check_valid_name(n)
-    
+# =================================================
+
+""" 🟦 QUESTION 11 — Alphabet Slicing
+Problem Statement
+Using the string:
+abcdefghijklmnopqrstuvwxyz
+
+Extract characters at even indices from index 0 to 9 (inclusive of start, exclusive of end).
+Print the resulting string.
+
+Output Format
+A single string. """
+
+
+s = "abcdefghijklmnopqrstuvwxyz"
+def get_char_even(s=""):
+    # print characters at even indices from 0 to 9. Don't use s[0:9:2] as it will give the same output but wrong method
+    print(s[0:10:2])
+
+get_char_even(s)
+# ========================================================
+""" 🟦 QUESTION 12 — Input Unpacking
+Problem Statement
+You are given a string of exactly 4 characters.
+Unpack the string into four variables and print each character on a new line.
+
+Input Format
+A string of length 4:s
+
+Output Format
+Four lines, one character per line.
+
+Example
+Input
+1234
+
+Output
+1
+2
+3
+4
+"""
+def unpack_str(s):
+    for i in (s):
+        print(i)
+s = "1234"
+unpack_str(s)
