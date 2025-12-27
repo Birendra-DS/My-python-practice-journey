@@ -288,3 +288,85 @@ def unpack_str(s):
         print(i)
 s = "1234"
 unpack_str(s)
+# =======================================
+
+
+
+""" 🧠 HARD PROBLEM (but realistic & job-relevant)
+Problem: Daily Sales Data Validator & Analyzer
+Context (real company scenario)
+
+You are working as a data analyst intern.
+Every day, a CSV-like text file is received with sales data.
+
+But the data is messy.
+
+Input
+You are given:
+An integer n → number of records
+Next n lines, each line contains:
+product_name, quantity_sold, price
+
+Example:
+5
+Tea,10,15.5
+Coffee,abc,20
+Sugar,5,xyz
+Milk,3,25
+Tea,2,15.5
+
+Tasks (this is where it’s hard)
+You must:
+Ignore invalid records
+quantity must be integer
+price must be float
+
+Calculate:
+total valid sales revenue
+total quantity sold per product
+
+Print:
+Total Revenue: <value>
+Top Product: <product_name>
+
+Constraints
+Use only what you already learned:
+strings
+if/else
+loops
+functions
+basic math
+❌ No pandas
+❌ No external libraries
+
+Why this problem is PERFECT for you
+
+✔ Uses real-world messy data
+✔ Forces string parsing
+✔ Forces error handling thinking
+✔ Uses loops + conditions
+✔ Relevant to data science jobs
+✔ One file → GitHub-ready
+✔ Hard but solvable
+
+This is the right kind of hard, not competitive programming nonsense."""
+
+
+"""Pseudocode: 
+Read the number of records
+Set total revenue to zero
+Create an empty dictionary to store total quantity per product
+
+Repeat the following steps for each record
+Read one record line
+Split the line into product name, quantity text, and price text
+Try to convert quantity text to an integer and price text to a float
+If conversion fails, skip this record and move to the next one
+Calculate revenue by multiplying quantity and price
+Add this revenue to total revenue
+If the product exists in the dictionary, add quantity to its stored value
+Otherwise, store the product with the quantity
+
+After processing all records, find the product with the highest quantity
+Print total revenue
+Print the top product name"""
