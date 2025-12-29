@@ -107,6 +107,37 @@ Output Format
 ...
 20 
 """
-for i in range(1,21):
-    if i % 2 == 0:
-        print(i)
+for i in range(1,11):
+        # print first 10 even number 
+        print(i*2)
+
+# write using function — same questions
+def get_first_n_even(n:int)-> None:
+    for i in range(1,n+1):
+        print(i*2)
+
+n = int(input("Enter the number whose first even no. you want to get:"))
+get_first_n_even(n)
+
+
+# =====================================================
+""" 🟩 QUESTION 4 — Square Printer
+Problem Statement
+Print the square of numbers from 1 to 5 in the following format:
+The square of X is equal to Y
+
+Input Format
+No input.
+
+Output Format
+Exactly 5 lines.
+
+Example Output
+The square of 1 is equal to 1
+The square of 2 is equal to 4
+The square of 3 is equal to 9
+The square of 4 is equal to 16
+The square of 5 is equal to 25
+"""
+for i in range(1,6):
+    print("The square of", i, "is equal to", i**2)
