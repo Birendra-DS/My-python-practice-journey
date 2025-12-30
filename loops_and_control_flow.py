@@ -141,3 +141,63 @@ The square of 5 is equal to 25
 """
 for i in range(1,6):
     print("The square of", i, "is equal to", i**2)
+    
+# Function version
+def sqr_printer(n):
+    for i in range(1,n+1):
+        print(f"The square of {i} is equal to {i**2}")
+
+n = int(input("Enter a number n whose square are you want to print from 1 to n:"))
+sqr_printer(n)
+
+# ======================================================================
+
+""" 🟩 QUESTION 5 — Loop Until Multiple
+Problem Statement
+Keep reading integers until the number entered is a multiple of 5 or 10.
+Then print that number and stop.
+
+Input Format
+Multiple integers (one per line).
+
+Output Format
+Print the terminating number.
+
+Example
+Input
+7
+9
+11
+20
+
+Output
+20
+"""
+
+
+year = int(input("When did India get indepenedent. Type only its year:"))
+if year == 1947:
+    print("Congratulations, You got it")
+else:
+    print("Alas, you don't even know this")
+    print("Ok lets I give you one more chance")
+    year = int(input("please try again:"))
+    if year == 1947:
+        print("COngratuations. Your mind remember the year")
+    else:
+        print("Chee")
+        print("One last chance.try again")
+        year = int(input("Enter the year:"))
+        if year == 1947:
+            print("COngratuations. Your mind remember the year")
+        else:
+            print("Shame on you")
+        # You can see that how hard it is using only if else method. But while loop can do it easily and in less line of code
+
+# same problem using while loop
+year = int(input("when did India got independence:"))
+# it loops until you type 1947.
+while(year != 1947):
+    print("❌👎. Please try again. I will not allow you to come outside the dangerous(while) loop until you don't give correct year")
+    year = int(input("Type the correct answer:"))
+print("🙏Hurray. You got it. Now you are free from the loop")
