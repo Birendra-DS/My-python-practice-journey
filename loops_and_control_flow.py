@@ -147,33 +147,11 @@ def sqr_printer(n):
     for i in range(1,n+1):
         print(f"The square of {i} is equal to {i**2}")
 
-n = int(input("Enter a number n whose square are you want to print from 1 to n:"))
+n = int(input("Enter a number n to print square from 1 to n:"))
 sqr_printer(n)
 
 # ======================================================================
-
-""" 🟩 QUESTION 5 — Loop Until Multiple
-Problem Statement
-Keep reading integers until the number entered is a multiple of 5 or 10.
-Then print that number and stop.
-
-Input Format
-Multiple integers (one per line).
-
-Output Format
-Print the terminating number.
-
-Example
-Input
-7
-9
-11
-20
-
-Output
-20
-"""
-
+# while loop concepts
 
 year = int(input("When did India get indepenedent. Type only its year:"))
 if year == 1947:
@@ -201,3 +179,62 @@ while(year != 1947):
     print("❌👎. Please try again. I will not allow you to come outside the dangerous(while) loop until you don't give correct year")
     year = int(input("Type the correct answer:"))
 print("🙏Hurray. You got it. Now you are free from the loop")
+
+
+""" 🟩 QUESTION 5 — Loop Until Multiple
+Problem Statement
+Keep reading integers until the number entered is a multiple of 5 or 10.
+Then print that number and stop.
+
+Input Format
+Multiple integers (one per line).
+
+Output Format
+Print the terminating number.
+
+Example
+Input
+7
+9
+11
+20
+
+Output
+20
+"""
+n =  int(input("Enter any number:"))
+while n % 5 != 0:
+    n = int(input("Enter a number:"))
+print(n)
+
+
+# ==========================================================
+"""Write a funtion to find the factorial of a given number"""
+""" Pseudocode
+ Start with result = 1
+Start with counter = n
+While counter is greater than 0
+Multiply result by counter
+Decrease counter by 1"""
+
+
+
+# Using function
+def get_factorial(n:int)-> int:
+    if n < 0:
+        raise ValueError("Invalid Input:Factorial is not defined for negative number")
+        
+    result = 1
+    counter = n
+    
+        
+    while counter > 0:
+        result = result * counter
+        counter = counter - 1
+    return result
+
+
+print(get_factorial(-2))
+
+
+
