@@ -234,7 +234,77 @@ def get_factorial(n:int)-> int:
     return result
 
 
-print(get_factorial(-2))
+print(get_factorial(2))
+# =================================================
+""" 🟢 Problem 1 — Sum of Digits (Accumulator mastery)
+Problem
+Write a program that:
+takes a positive integer
+calculates the sum of its digits
+
+Example
+Input: 472
+Output: 13   (4 + 7 + 2)
+"""
+
+    # Pseudocode
+"""
+1️⃣ Take a positive integer from the user
+2️⃣ Store it in a variable called num
+3️⃣ Initialize sum = 0
+4️⃣ While num is greater than 0
+5️⃣ Extract the last digit using % 10
+6️⃣ Add the extracted digit to sum
+7️⃣ Remove the last digit from num using // 10
+8️⃣ Loop stops automatically when num becomes 0
+"""
+def get_sum_digits(n):
+    num = n
+    if num < 0:
+        raise ValueError("Please give positive number")
+    # do not use sum as a variable name as it is build in python function
+    digit_sum = 0         # It is use to store the final result
+    # Condition n> 0 become False as soon as num hit zero
+    while num > 0:
+        extract_dig = num % 10 
+        digit_sum = digit_sum + extract_dig
+        num = num // 10
+    return digit_sum
+
+x = int(input("Enter the number to get the sum:"))
+print(f"sum of the digit is {get_sum_digits(x)}")
+
+# ================================================================
+# 🔵 PROBLEM 2 — Reverse a Number
+""" 
+Goal 
+Given a positive integer, produce a new number with digits reversed.
+
+Example:
+Input: 1234
+Output: 4321"""
+
+    # Pseudocode
+"""
+1. Take input from users(positive)
+2. Store that number in new variable called num
+3. Define reverse variable to store  the final result
+4. while the number greater than 0
+    5. Multiply last digit by 10 to shift the reverse left
+    6. Extract the last digit and add it to reverse variable
+    7. remove digits from num to make condition False
+8. return the reverse digit """
+
+def rev_digit(x):
+    num = x 
+    rev_num = 0
+    while num > 0:
+        # rev_num = rev_num * 10--> we can also write this after extracted_dig line 
+        extracted_dig = num % 10
+        rev_num = rev_num * 10 + extracted_dig
+        num = num // 10     # it make condition false
+    return rev_num
 
 
 
+        
