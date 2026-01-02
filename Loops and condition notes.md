@@ -963,3 +963,260 @@ You are not “confused” in a bad way.
 You are at the exact point where understanding solidifies.
 
 Confusion + correction = learning.
+
+
+# Smallest divisible expression formula
+    1️⃣ Check your CURRENT code (truth first)
+
+    Your current code:
+
+    x = 1
+    num = x**2 + x + 41
+
+    while num % 41 != 0:
+        x = x + 1
+        num = x   # ❌ wrong
+    print(x)
+
+    ❌ This code is STILL WRONG
+
+    You fixed one mistake, but introduced another logical error.
+
+    2️⃣ Why num = x is WRONG (very important)
+
+    You wrote:
+
+    num = x
+
+
+    But num is supposed to represent:
+
+    x² + x + 41
+
+    Now it represents:
+
+    num = x
+
+
+    That means your loop condition becomes:
+
+    x % 41 != 0
+
+
+    🚨 You silently changed the problem itself.
+
+    So now the program is no longer checking:
+
+    “Is x² + x + 41 divisible by 41?”
+
+    Instead it is checking:
+
+    “Is x divisible by 41?”
+
+    That is a different problem.
+
+    🔑 The core rule (read twice)
+
+    A variable must always represent what its name claims.
+
+    If num means the expression, then:
+
+    it must ALWAYS be x² + x + 41
+
+    not sometimes that, sometimes x
+
+    3️⃣ The ONLY correct update logic (conceptual, not dumping code)
+
+    Inside the loop, the only valid update for num is:
+
+    Recalculate it from the formula using the new value of x
+
+    Not:
+
+    num = num + x
+
+    num = x
+
+    But:
+
+    recompute from definition
+
+    This is the same discipline you used in:
+
+    sum of digits
+
+    reverse number
+
+    Same rule. New problem.
+
+    ✅ Code review (strict, final)
+
+    Your code:
+
+    x = 1                          # starts with the smallest positive integer
+    num = x**2 + x + 41            # current value of the expression
+
+    while num % 41 != 0:           # keep searching until the expression becomes divisible
+        x = x + 1                  # try the next integer
+        num = x**2 + x + 41        # recompute num for the new x
+
+    print(x)
+
+    ✔ Logic
+
+    Correct search pattern
+
+    Correct loop condition
+
+    Correct recomputation
+
+    Correct stopping point
+
+    No infinite loop
+
+    No silent bug
+
+    This is exactly how this problem should be solved using a while loop.
+
+    If this were:
+
+    a college exam → full marks
+
+    an interview → accepted
+
+    a real script → safe and readable
+
+    ✅ Comment quality (important)
+
+    Your comments are now professional, not beginner noise.
+
+    Why your comments are GOOD
+
+    They explain intent, not syntax
+
+    They explain why the line exists
+
+    They help future-you understand the logic quickly
+
+    Example of a good comment you wrote:
+
+    # recompute num for the new x
+
+
+    That explains meaning, not mechanics. Perfect.
+
+    Now answer your real question (this matters)
+
+    “I struggle a lot from here. Is it a good thing that I struggle and learn? Is Python learning like this?”
+
+    Short, honest answer:
+
+    YES. This is exactly how real learning looks.
+
+    What you experienced is NOT failure
+
+    What you experienced was:
+
+    misunderstanding → correction
+
+    wrong logic → refined logic
+
+    confusion → clarity
+
+    This is how the brain actually builds skill.
+
+    If learning felt smooth all the time:
+
+    you’d be memorizing
+
+    not understanding
+
+    The struggle you had was the RIGHT struggle
+
+    You did not struggle with:
+
+    syntax
+
+    typing
+
+    Python keywords
+
+    You struggled with:
+
+    loop invariants
+
+    variable meaning
+
+    update logic
+
+    condition control
+
+    👉 These are the hard parts
+    👉 These are the parts employers care about
+
+    Very important truth (read carefully)
+
+    People who don’t struggle are usually copying.
+    People who struggle like this are actually learning.
+
+    You earned this understanding.
+
+    Why Python feels hard here
+
+    Python itself is not hard.
+
+    What’s hard is:
+
+    thinking precisely
+
+    making variables mean one thing
+
+    making loops stop correctly
+
+    This difficulty exists in:
+
+    Python
+
+    C
+
+    Java
+
+    Data Science
+
+    Machine Learning
+
+    Backend systems
+
+    So yes — learning programming is like this, especially at the beginning.
+
+    One mindset shift you must keep
+
+    Stop asking:
+
+    “Why am I struggling?”
+
+    Start saying:
+
+    “Good — I found the exact place I need to improve.”
+
+    That’s what you did here.
+
+    One warning (important)
+
+    Do not:
+
+    rush to advanced topics
+
+    skip these fundamentals
+
+    think “I got it once, so I’m done”
+
+    Do:
+
+    repeat this pattern
+
+    solve 10–15 similar while search problems
+
+    make mistakes and correct them
+
+    That’s how this becomes automatic.

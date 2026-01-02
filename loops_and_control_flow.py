@@ -152,7 +152,7 @@ sqr_printer(n)
 
 # ======================================================================
 # while loop concepts
-
+"""
 year = int(input("When did India get indepenedent. Type only its year:"))
 if year == 1947:
     print("Congratulations, You got it")
@@ -179,7 +179,7 @@ while(year != 1947):
     print("❌👎. Please try again. I will not allow you to come outside the dangerous(while) loop until you don't give correct year")
     year = int(input("Type the correct answer:"))
 print("🙏Hurray. You got it. Now you are free from the loop")
-
+"""
 
 """ 🟩 QUESTION 5 — Loop Until Multiple
 Problem Statement
@@ -202,22 +202,25 @@ Input
 Output
 20
 """
-n =  int(input("Enter any number:"))
-while n % 5 != 0:
-    n = int(input("Enter a number:"))
-print(n)
+def check_mult_of_five(n):
+    # it become false when n is multiple of 5, otherwise it ask for valid input.
+    while n % 5 != 0:
+        n = int(input("Try again.Enter a number:"))
+    return n
+
+    
+x = int(input("Enter num mult of 5:"))
+print(check_mult_of_five(x))
 
 
 # ==========================================================
 """Write a funtion to find the factorial of a given number"""
 """ Pseudocode
  Start with result = 1
-Start with counter = n
-While counter is greater than 0
-Multiply result by counter
-Decrease counter by 1"""
-
-
+ Start with counter = n
+ While counter is greater than 0
+ Multiply result by counter
+ Decrease counter by 1"""
 
 # Using function
 def get_factorial(n:int)-> int:
@@ -226,8 +229,7 @@ def get_factorial(n:int)-> int:
         
     result = 1
     counter = n
-    
-        
+            
     while counter > 0:
         result = result * counter
         counter = counter - 1
@@ -262,20 +264,24 @@ def get_sum_digits(n):
     num = n
     if num < 0:
         raise ValueError("Please give positive number")
+    
     # do not use sum as a variable name as it is build in python function
     digit_sum = 0         # It is use to store the final result
+
     # Condition n> 0 become False as soon as num hit zero
     while num > 0:
-        extract_dig = num % 10 
-        digit_sum = digit_sum + extract_dig
-        num = num // 10
+        extract_dig = num % 10                  # get the last digit
+        digit_sum = digit_sum + extract_dig     # add the last digit to the digit_sum
+        num = num // 10                         # remove digits from the num to make condition false 
+
     return digit_sum
+
 
 x = int(input("Enter the number to get the sum:"))
 print(f"sum of the digit is {get_sum_digits(x)}")
 
 # ================================================================
-# 🔵 PROBLEM 2 — Reverse a Number
+# 🔵 PROBLEM  — Reverse a Number
 """ 
 Goal 
 Given a positive integer, produce a new number with digits reversed.
@@ -298,13 +304,41 @@ Output: 4321"""
 def rev_digit(x):
     num = x 
     rev_num = 0
+
     while num > 0:
         # rev_num = rev_num * 10--> we can also write this after extracted_dig line 
         extracted_dig = num % 10
-        rev_num = rev_num * 10 + extracted_dig
-        num = num // 10     # it make condition false
+        rev_num = rev_num * 10 + extracted_dig      # shift the reverse left and add the extracted digit
+        num = num // 10     # it makes condition false
+
     return rev_num
 
 
+# =================================================
+""" 🟩 QUESTION 6 — Smallest Divisible Expression
+Problem Statement
+Using a while loop, find the smallest positive integer x such that:
+x² + x + 41
+is divisible by 41.
 
-        
+Input Format
+No input.
+
+Output Format
+Print the value of x.
+"""
+    # Pseudocode
+"""
+Start with the smallest positive integer
+Repeat while the expression is not divisible by 41
+    Compute the expression using the current value
+    Move to the next value
+Stop when the expression becomes divisible by 41
+Output the value
+""" 
+x = 1                           # starts with the smallest positive integer
+num = x**2 + x + 41             # current value of the expression 
+while num % 41 != 0:            # keep seaching untill the expresion become divisible
+    x = x + 1                   # try the next integer
+    num =  x**2 + x + 41       # Recompute num for the new x
+print(x)
