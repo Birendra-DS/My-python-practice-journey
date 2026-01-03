@@ -36,12 +36,12 @@ Output
 27
 30"""
 # define n inside the parameter to take user input
-def mult_table():
-    for i in range(1,11):
-        print(n*i)
+#def mult_table():
+ #   for i in range(1,11):
+        #print(n*i)
         
-n = int(input("Enter a no:"))
-mult_table()
+#n = int(input("Enter a no:"))
+#mult_table()
 # =================================================
 
 """ 🟩 QUESTION 2 — Print All Factors
@@ -75,8 +75,8 @@ def get_factor(n):
         if n % i == 0:
             print(i)
 
-n = int(input("Please enter a no:"))
-get_factor(n)
+#n = int(input("Please enter a no:"))
+#get_factor(n)
 
 # Note: Printing is for humans.Returning is for programs.
         #Jobs want programs, not print statements.
@@ -88,8 +88,8 @@ def get_True_factor(n:int)->list[int]:
             factor.append(i)
     return factor
 
-n = int(input("Please enter a no:"))
-print(get_True_factor(n))
+#n = int(input("Please enter a no:"))
+#print(get_True_factor(n))
 
  # ====================================================
 
@@ -116,8 +116,8 @@ def get_first_n_even(n:int)-> None:
     for i in range(1,n+1):
         print(i*2)
 
-n = int(input("Enter the number whose first even no. you want to get:"))
-get_first_n_even(n)
+#n = int(input("Enter the number whose first even no. you want to get:"))
+#get_first_n_even(n)
 
 
 # =====================================================
@@ -147,8 +147,8 @@ def sqr_printer(n):
     for i in range(1,n+1):
         print(f"The square of {i} is equal to {i**2}")
 
-n = int(input("Enter a number n to print square from 1 to n:"))
-sqr_printer(n)
+#n = int(input("Enter a number n to print square from 1 to n:"))
+#sqr_printer(n)
 
 # ======================================================================
 # while loop concepts
@@ -209,8 +209,8 @@ def check_mult_of_five(n):
     return n
 
     
-x = int(input("Enter num mult of 5:"))
-print(check_mult_of_five(x))
+#x = int(input("Enter num mult of 5:"))
+#print(check_mult_of_five(x))
 
 
 # ==========================================================
@@ -277,8 +277,8 @@ def get_sum_digits(n):
     return digit_sum
 
 
-x = int(input("Enter the number to get the sum:"))
-print(f"sum of the digit is {get_sum_digits(x)}")
+#x = int(input("Enter the number to get the sum:"))
+#print(f"sum of the digit is {get_sum_digits(x)}")
 
 # ================================================================
 # 🔵 PROBLEM  — Reverse a Number
@@ -342,3 +342,98 @@ while num % 41 != 0:            # keep seaching untill the expresion become divi
     x = x + 1                   # try the next integer
     num =  x**2 + x + 41       # Recompute num for the new x
 print(x)
+
+# =======================================
+""" Average of First 50 Odd Numbers
+Problem Statement
+Calculate the average of the first 50 odd positive integers.
+
+Input Format
+No input.
+
+Output Format
+Print the average (as a float).
+"""
+""" Approach
+1.) Calculate the first 50 odd positive integer
+2) Sum all 50 odd positive integer and divide it by 50
+3) 1, 3, 5,7,9,11,
+4) If n % 2 != 0: 
+"""
+
+"""Pseudocode
+1.) set variable to the first odd number
+2.) set count 0 to track number of odd number
+3.) set sum 0 to get the total sum of odds
+4.) while count less than 50
+    5.) Increment the count vriable by 2
+    6.) Add count varible to first odd
+    7.) Add them to the sum
+8.) Get sum
+9.) Average is sum divided by 50"""
+
+first_odd = 1       # First odd number from starts
+count_odd = 1       # counts how many odds number are included
+odd_sum = 1         # track odd number sum so far
+
+while count_odd < 50:       # loop untill 50 odd number are counted
+    first_odd = first_odd + 2           # Add 2 to get another odd number
+    count_odd = count_odd + 1           # Tracks the count of odd number
+    odd_sum = odd_sum + first_odd       # add current odd number to the sum
+
+print("Sum of 1st 50 odd is:",odd_sum)
+average = odd_sum / 50
+print("Average of 1st 50 odd:", average)
+
+
+
+
+# =========================================================
+""" 🟩 QUESTION 8 — Nested Loop Sum
+Problem Statement
+Compute the value of total after executing the following logic:
+
+total = 0
+for i from 1 to 4:
+    repeat i times:
+        total += i
+
+Input Format
+No input.
+
+Output Format
+Print the final value of total."""
+
+""" Pseudocode
+1.) set total to zero
+2.) for each number from 1 to 4
+    3.) multiply each number by itself and then add to the total
+    4.) print total value 
+"""
+total = 0 
+for i in range(1,5):
+    i = i * i               # repeating each value ❌
+    total = total + i       # additing each repeating number to the total
+    print(i)
+print ("Total:", total)
+
+
+# =========================================================
+"""— Asterisk Counter
+
+Problem Statement
+Print a pattern where line i contains i asterisks (*) for i from 0 to 99.
+
+Then print the total number of asterisks printed.
+
+Input Format
+No input.
+
+Output Format
+Print a single integer — total count of *."""
+total = 0
+for i in range(0,100):
+    s = i*"*"
+    total = total + i
+    print(s)
+print("Total count of * is",total)
