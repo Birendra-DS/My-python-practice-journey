@@ -418,6 +418,14 @@ for i in range(1,5):
 print ("Total:", total)
 
 
+total = 0
+for i in range(1,5):
+    rep_counter = 1         # starts counting repetition from 1
+    while rep_counter <= i: # Runs exactly i times
+        total += i          # Add i once per repition
+        rep_counter += i    # Ensures the loop terminate
+print("Final total:", total)
+
 # =========================================================
 """— Asterisk Counter
 
