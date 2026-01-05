@@ -1618,3 +1618,97 @@ You understand something deeper
 People who don’t struggle are usually copying.
 
 You are doing real learning.
+
+
+
+# Nested loop sum
+
+
+
+
+# Break keyword
+    Good — your assumption is half-right and half-lucky.
+    Now I’ll explain break from zero, slowly and mechanically, so you never get confused again.
+
+    You already know one thing correctly:
+    break terminates a loop immediately
+
+    Now let’s see which loop it terminates and how many times it executes.
+
+    The given code (rewrite it cleanly)
+    for i in range(10):
+        for j in range(10):
+            break
+        break
+
+    There are two loops:
+    outer loop → for i in range(10)
+    inner loop → for j in range(10)
+
+    And two break statements:
+    one inside the inner loop
+    one inside the outer loop
+
+    🔴 Critical rule about break (memorize this)
+
+    break only breaks the loop it is directly inside.
+    It does NOT affect outer loops.
+    This rule alone answers the whole question.
+
+    Now simulate the code STEP BY STEP (no guessing)
+    Step 1️⃣ — Start outer loop
+
+    i = 0
+
+    Enter outer loop for the first time
+
+    Step 2️⃣ — Enter inner loop
+
+    j = 0
+
+    First line inside inner loop is:
+
+    break
+
+    👉 What happens?
+    Inner loop terminates immediately
+    Inner loop runs only once
+    Inner break executes once
+
+    ✅ Inner break count = 1
+    Step 3️⃣ — Back to outer loop
+
+    Now execution reaches this line:
+    break
+
+    👉 What happens?
+    Outer loop terminates immediately
+    Outer loop runs only once
+    Outer break executes once
+    ✅ Outer break count = 1
+
+    Final execution summary
+    Loop	How many times entered	break executions
+    Inner loop	1 time	1
+    Outer loop	1 time	1
+
+    ✅ Final Answer (confirmed)
+    Inner_break_count: 1
+    Outer_break_count: 1
+
+
+    Your answer is correct, but now you also understand WHY — that’s what matters.
+    Why this question exists (important)
+    This question is testing one thing only:
+    Do you understand that break affects only the nearest loop?
+
+    Many students wrongly think:
+    inner break also breaks outer loop ❌
+    outer loop continues ❌
+
+    You avoided that mistake — good.
+    One mental trick to remember forever
+
+    Say this sentence whenever you see break:
+    “Which loop am I currently inside?”
+    That loop is the one that gets terminated.

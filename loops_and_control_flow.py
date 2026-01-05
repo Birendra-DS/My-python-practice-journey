@@ -421,9 +421,11 @@ print ("Total:", total)
 total = 0
 for i in range(1,5):
     rep_counter = 1         # starts counting repetition from 1
+
     while rep_counter <= i: # Runs exactly i times
         total += i          # Add i once per repition
-        rep_counter += i    # Ensures the loop terminate
+        rep_counter += 1   # Ensures the loop terminate. Move to the next repetition
+
 print("Final total:", total)
 
 # =========================================================
@@ -441,7 +443,58 @@ Output Format
 Print a single integer — total count of *."""
 total = 0
 for i in range(0,100):
-    s = i*"*"
-    total = total + i
-    print(s)
+    stars = i*"*"
+    total = total + i   
+    #print(stars)                       # shows patterns
 print("Total count of * is",total)
+
+# ===============================================================
+""" 🟩 QUESTION 10 — Break Counter
+Problem Statement
+Given the following logic:
+
+for i in range(10):
+    for j in range(10):
+        break
+    break
+
+Count:
+How many times the inner break executes
+How many times the outer break executes
+
+Input Format
+No input.
+
+Output Format
+Print two integers on separate lines:
+
+inner_break_count
+outer_break_count
+"""
+
+# ==========================================================
+""" 🟩 QUESTION 11 — Float Formatter
+Problem Statement
+You are given a floating-point number x.
+Print it rounded to exactly two decimal places.
+
+Input Format
+x
+
+Output Format
+formatted_value
+
+Example
+Input
+1234.2
+
+Output
+1234.20
+"""
+def round_float(n):
+    return f" {n:.2f}"
+
+# n competitive programming / exams:❌ prompts are not allowed
+#   ✅ plain input() is expected
+n = float(input())
+print(round_float(n))
