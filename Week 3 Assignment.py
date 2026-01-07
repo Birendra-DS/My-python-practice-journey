@@ -47,13 +47,37 @@ def get_first_n_odd(x):
     first_odd = 1
     odd_sum = 1
     odd_counter = 1
-    while odd_counter <= x:
+
+    # If you initialize with the first element,
+    # your loop must run n-1 times, not n times.
+    while odd_counter < x:
         first_odd += 2
         odd_counter += 1
-        odd_sum += first_odd                
+        odd_sum += first_odd               
 
     return odd_sum
 
+
+# same code using for loop
+def get_sum_of_odd(x):
+    current_odd = 1
+    odd_sum = 0
+
+    # for loop is professional here because we know quanitity 
+    for _ in range(x):
+        odd_sum += current_odd
+        current_odd += 2
+
+    return odd_sum 
+
+
 n = int(input())
 print("sum of odd:", get_first_n_odd(n))
+print("Sum of odd using for loop:", get_sum_of_odd(n))
+
+
+
+
+
+# ===================================================
 
