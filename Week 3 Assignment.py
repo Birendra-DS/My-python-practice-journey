@@ -79,5 +79,78 @@ print("Sum of odd using for loop:", get_sum_of_odd(n))
 
 
 
-# ===================================================
+# ======================================================
+# 🧠 Problem: Batch Login Attempt Analyzer
+""" 
+Context (realistic scenario)
+You are given multiple users.
+For each user, the system allows up to 3 login attempts.
+If the user enters the correct password, stop attempts for that user.
+If the user fails 3 times, lock the account and move to the next user.
+
+Input Format
+An integer n → number of users
+
+For each user:
+A string correct_password
+Then multiple strings representing attempted passwords (user input simulation)
+You should simulate this using input.
+
+Rules
+For each user:
+Allow maximum 3 attempts
+If password matches → print "Login successful"
+If 3 attempts fail → print "Account locked"
+
+Output Format
+For each user, print one line:
+"Login successful"
+OR
+"Account locked"
+
+Example (just for understanding, not exact input)
+Input:
+2
+abc123
+wrong
+123
+abc123
+pass
+pass
+pass
+
+Output:
+Login successful
+Account locked
+
+Constraints
+You must use:
+for loop → to iterate over users
+while loop → to handle retry attempts per user
+No shortcuts. No tricks."""
+
+n = int(input("Enter number of users:"))    
+correct_password = "Bir" 
+
+# Use user_index to show it is number: 0, 1, 2 -> n
+for user_index in range(n):           # iterate thorugh each user till the range n
+    attempt_count = 0
+    print("\n⏭️ Next user chance")
+    print(f"User {user_index + 1} enter password:")     # user_index + 1 give actual user number(0->1, 1->2 etc)
+
+    while attempt_count < 3:
+        attempted_pass = input("Enter the password:")
+        attempt_count += 1
+    
+        if attempted_pass == correct_password:
+            print("Login successful")
+            # without break it continue even if usertype correct password
+            break                       # terminate the while loop.
+
+        else:
+            if attempt_count == 3:
+                print("Account locked")
+                
+            else: 
+                print("❌Wrong password try again")
 
