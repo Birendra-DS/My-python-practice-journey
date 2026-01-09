@@ -154,3 +154,78 @@ for user_index in range(n):           # iterate thorugh each user till the range
             else: 
                 print("❌Wrong password try again")
 
+
+
+# =======================================================================
+# 🟦 QUESTION — Nested Loop Equivalence (While Version)
+"""
+Problem Statement
+You are given the following nested loop logic in conceptual form:
+
+For every value of x from 0 to 99,
+and for every value of y from 0 to 99,
+print the pair (x, y) only if x is not equal to y.
+
+Your task is to implement this logic using ONLY while loops.
+
+Rules & Constraints
+You must use:
+two while loops (nested)
+no for loops
+
+You must:
+correctly initialize both loop variables
+correctly reset the inner loop variable each time the outer loop runs
+Do not print (x, x) pairs.
+
+Output Format
+Each valid pair should be printed in this format:
+x y
+(one pair per line)
+
+Expected Behavior (Important)
+Your program should print:
+0 1
+0 2
+...
+0 99
+1 0
+1 2
+...
+1 99
+...
+98 0
+98 1
+...
+98 99
+99 0
+99 1
+...
+99 98
+
+But never:
+0 0
+1 1
+2 2
+...
+99 99
+
+Input Format
+No input.
+
+🚫 What you are NOT allowed to do
+❌ Do not use for
+❌ Do not hardcode values
+❌ Do not skip resetting y
+❌ Do not print x 
+"""
+
+x = 0
+while x < 100:      # process each x values
+    y = 0           # reset y for each x
+    while y < 100:   # process each y values
+        if x!= y:       
+            print(x,y)
+        y = y+1         # move to next y value
+    x = x+1             # move to next x value
+
