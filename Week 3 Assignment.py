@@ -220,12 +220,82 @@ No input.
 ❌ Do not print x 
 """
 
-x = 0
+'''x = 0
 while x < 100:      # process each x values
     y = 0           # reset y for each x
     while y < 100:   # process each y values
         if x!= y:       
             print(x,y)
         y = y+1         # move to next y value
-    x = x+1             # move to next x value
+    x = x+1             # move to next x value'''
+
+# ======================================================================
+# 🟦 QUESTION — Average Coins from String
+"""
+Problem Statement
+You are given a string that represents boxes of coins.
+The string format is like:
+|1|4|1|5|9|
+The vertical bar | is a separator.
+Each number between two bars represents the number of coins in one box.
+All numbers are single-digit non-negative integers.
+
+Your task is to calculate the average number of coins per box.
+
+Input Format
+A single line containing the string:
+boxes
+
+Example:
+|1|4|1|5|9|
+
+Output Format
+Print a single floating-point number — the average number of coins.
+
+Rules
+You must:
+iterate over the string
+ignore the | characters
+convert digit characters to integers
+count how many boxes are present
+compute the average
+
+Do not use:
+split()
+regex
+external libraries
+Use only loops, conditions, and type conversion.
+
+Example
+Input
+|1|4|1|5|9|
+
+Output
+4.0
+(Explanation: (1 + 4 + 1 + 5 + 9) / 5 = 4.0)
+
+Important Notes (read carefully)
+The string will always start and end with |
+There will be no spaces
+Every box contains exactly one digit
+"""
+
+def get_avg(boxes):
+    total = 0               # store sum of coins
+    count = 0               # store number of boxes
+
+    for  char in boxes :
+        if char != "|":             
+            digit = int(char)           # convert character into integer 
+            total += digit
+            count = count +1             # keep count of integer value
+    # avg need final total and count. So we only get these after the loop finish
+    avg = total / count
+    return avg
+
+    
+
+boxes = "|3|0|2|"
+print(get_avg(boxes))
+
 
