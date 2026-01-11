@@ -299,3 +299,78 @@ boxes = "|3|0|2|"
 print(get_avg(boxes))
 
 
+
+# ==========================================================
+"""🟦 QUESTION — Date and Time Formatter
+Problem Statement
+You are given six separate values representing date and time:
+day
+month
+year
+hour
+minute
+second
+
+Your task is to format and print the date and time in the following exact format:
+DD-MM-YYYY HH:MM:SS
+
+Input Format
+Six lines, each containing one value:
+day
+month
+year
+hour
+minute
+second
+
+All values are strings and may contain leading zeros.
+
+Output Format
+Print a single line in the format:
+DD-MM-YYYY HH:MM:SS
+
+Example
+Input
+01
+01
+2021
+12
+30
+00
+
+Output
+01-01-2021 12:30:00
+
+Rules (IMPORTANT – Read Carefully)
+You must not hardcode the output.
+
+You must use:
+string formatting
+OR print() with sep and end
+OR f-strings
+OR .format()
+OR % formatting
+
+Do not use:
+datetime library
+any external library
+Use only what you learned in Week 3."""
+
+day = (input("Day:"))
+month = (input("Month:"))
+year = (input("Year:"))
+hour = (input("Hour:"))
+min = (input("Minutes:"))
+sec = (input("Second:"))
+
+print(f"{day}-{month}-{year}  {hour}:{min}:{sec}")
+print("Second Method")
+print(day,end ="-")
+print(month,end="-")
+print(year,end =" ")
+print(hour,end =":")
+print(min,end =":")
+print(sec)
+
+
+
