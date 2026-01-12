@@ -372,5 +372,50 @@ print(hour,end =":")
 print(min,end =":")
 print(sec)
 
+# ===================================================================
+# QUESTION — Financial Transaction Formatter
+"""
+Problem Statement
+You are given three values related to a financial transaction:
+country_code (string)
+currency_code (string)
+exchange_rate (float)
 
+Your task is to print the transaction record in the following exact format:
+<country_code>, <currency_code>, <exchange_rate_rounded_to_2_decimal_places>
+The exchange rate must be rounded to exactly 2 decimal places.
 
+Input Format
+Three lines:
+country_code
+currency_code
+exchange_rate
+
+Output Format
+Print a single line in this format:
+IN, RS, 73.23
+Example
+Input
+IN
+RS
+73.2272
+
+Output
+IN, RS, 73.23
+Rules (IMPORTANT – Read Carefully)
+You must round the float to exactly 2 decimal places
+You must use formatted output:
+f-string
+OR .format()
+OR % formatting
+
+Do NOT:
+use round() and then print directly
+print the raw float
+hardcode output
+Use format specifiers."""
+
+country_code = input("Country code:")
+currency_code = input("Currency code:")
+exchange_rate = float(input("Exchange rate:"))
+print(f"{country_code},{currency_code}, {exchange_rate:.2f}")   # space after 2nd comma
