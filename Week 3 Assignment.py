@@ -293,11 +293,8 @@ def get_avg(boxes):
     avg = total / count
     return avg
 
-    
-
 boxes = "|3|0|2|"
 print(get_avg(boxes))
-
 
 
 # ==========================================================
@@ -356,7 +353,7 @@ datetime library
 any external library
 Use only what you learned in Week 3."""
 
-day = (input("Day:"))
+'''day = (input("Day:"))
 month = (input("Month:"))
 year = (input("Year:"))
 hour = (input("Hour:"))
@@ -371,7 +368,7 @@ print(year,end =" ")
 print(hour,end =":")
 print(min,end =":")
 print(sec)
-
+'''
 # ===================================================================
 # QUESTION — Financial Transaction Formatter
 """
@@ -419,3 +416,107 @@ country_code = input("Country code:")
 currency_code = input("Currency code:")
 exchange_rate = float(input("Exchange rate:"))
 print(f"{country_code},{currency_code}, {exchange_rate:.2f}")   # space after 2nd comma
+
+#======================================================
+# 🟦 QUESTION — Right Padding a String
+"""
+Problem Statement
+You are given:
+a single character string T
+an integer n
+
+Your task is to print the string T left-aligned in a field of width n, so that:
+T appears at the start
+and the remaining positions are filled with spaces on the right
+In other words, you must add (n − 1) spaces after T.
+
+Input Format
+Two lines:
+T
+n
+Where:
+T is a single character string
+n is a positive integer (n > 1)
+
+Output Format
+Print the padded string in this exact format:
+T<spaces>
+Total length of output must be exactly n characters.
+
+Example
+Input
+A
+5
+
+Output
+A    
+(That is A followed by 4 spaces)
+Rules (IMPORTANT)
+
+You must use string formatting to achieve this:
+% formatting
+OR f-strings
+OR .format()
+
+Do NOT:
+use loops to add spaces
+use string multiplication (" " * k)
+hardcode spaces
+
+This problem is about format specifiers and alignment, not loops."""
+
+T = input("Str:")
+n = int(input("Enter int:"))
+print(f"{T}{ "_"*(n-1)}")       # f-string method
+print(T+(n-1)*"")               # normal print method
+
+# ======================================================================
+# QUESTION — Caesar Cipher Encoder (Basic Version)
+"""Problem Statement
+You are given:
+a lowercase string word
+an integer shift
+
+The English alphabet is:
+abcdefghijklmnopqrstuvwxyz
+
+Your task is to encode the word using a Caesar Cipher, where:
+each letter is shifted forward by shift positions
+if shifting goes beyond 'z', it must wrap around to the beginning
+
+Input Format
+Two lines:
+word
+shift
+
+Where:
+word contains only lowercase letters
+shift is an integer between 0 and 25
+
+Output Format
+Print the encoded word.
+
+Example
+Input
+5
+
+Output
+udymts
+
+Rules (IMPORTANT)
+You must:
+loop through each character in the word
+find its position in the alphabet
+shift it forward by shift
+use modulo (% 26) to wrap around
+
+Do NOT:
+use built-in encryption libraries
+hardcode outputs
+use ASCII shortcuts (for now)
+
+Use only:
+strings
+loops
+indexing
+basic math"""
