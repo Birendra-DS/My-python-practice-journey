@@ -17,13 +17,14 @@ Input: 256 -> Output: 8
 6) print y
 
  """
+'''
 x = int(input("Enter the integer:"))
 y = 0               # It keep keep count of the power
 while x > 2:        # ⁉️ why not x> 1?
     x = x // 2      # x // 2 performs integer (floor) division. ⁉️ why not we do x / 2 (float division)
     y = y + 1
 print(y)
-
+'''
 # ===============================================================
     #  Question 3: Sum of First n Odd Numbers (While Loop)
 """
@@ -43,6 +44,8 @@ output: 1+3+5+7+9 = 25
     8) add first odd value to  sum of odds
 9) print the sum of odds
 """
+
+'''
 def get_first_n_odd(x):
     first_odd = 1
     odd_sum = 1
@@ -74,7 +77,7 @@ def get_sum_of_odd(x):
 n = int(input())
 print("sum of odd:", get_first_n_odd(n))
 print("Sum of odd using for loop:", get_sum_of_odd(n))
-
+'''
 
 
 
@@ -129,6 +132,7 @@ for loop → to iterate over users
 while loop → to handle retry attempts per user
 No shortcuts. No tricks."""
 
+'''
 n = int(input("Enter number of users:"))    
 correct_password = "Bir" 
 
@@ -154,7 +158,7 @@ for user_index in range(n):           # iterate thorugh each user till the range
             else: 
                 print("❌Wrong password try again")
 
-
+'''
 
 # =======================================================================
 # 🟦 QUESTION — Nested Loop Equivalence (While Version)
@@ -279,7 +283,7 @@ The string will always start and end with |
 There will be no spaces
 Every box contains exactly one digit
 """
-
+'''
 def get_avg(boxes):
     total = 0               # store sum of coins
     count = 0               # store number of boxes
@@ -295,7 +299,7 @@ def get_avg(boxes):
 
 boxes = "|3|0|2|"
 print(get_avg(boxes))
-
+'''
 
 # ==========================================================
 """🟦 QUESTION — Date and Time Formatter
@@ -412,10 +416,10 @@ print the raw float
 hardcode output
 Use format specifiers."""
 
-country_code = input("Country code:")
+'''country_code = input("Country code:")
 currency_code = input("Currency code:")
 exchange_rate = float(input("Exchange rate:"))
-print(f"{country_code},{currency_code}, {exchange_rate:.2f}")   # space after 2nd comma
+print(f"{country_code},{currency_code}, {exchange_rate:.2f}")   # space after 2nd comma'''
 
 #======================================================
 # 🟦 QUESTION — Right Padding a String
@@ -465,11 +469,11 @@ hardcode spaces
 
 This problem is about format specifiers and alignment, not loops."""
 
-T = input("Str:")
+'''T = input("Str:")
 n = int(input("Enter int:"))
 print(f"{T}{ "_"*(n-1)}")       # f-string method
 print(T+(n-1)*"")               # normal print method
-
+'''
 # ======================================================================
 # QUESTION — Caesar Cipher Encoder (Basic Version)
 """Problem Statement
@@ -520,3 +524,168 @@ strings
 loops
 indexing
 basic math"""
+
+# Pseudocode
+""" 
+1) Define alphabet of English and result emplty string
+2) Read the input word and shift variable 
+3) Loop through the given word
+    4) Find the position of current character in word
+        # We do not care about position in the word.
+        We only care about position in the alphabet.
+    5) Find the postion of current char in Alphabet
+    6) add the shift value to the current char position
+    7) apply modulo operator on current char position to wrap
+    8) add this to result 
+9) print the result
+"""
+
+alp = "abcdefghijklmnopqrstuvwxyz"
+word = input("Enter word:")             # cons: it only accept lowercase, not uppercase
+shift = int(input("Enter shift value:"))
+result = ""                             # store encoded word
+for char in word:
+    position = alp.index(char)     # find position of character in alphabet 
+    new_pos = (position + shift) % 26       # wrap logic and shifting the character
+    new_char = alp[new_pos]         # give encoded character from alphabet 
+    result += new_char
+
+print(result)
+
+# ======================================================================
+# 🟦 QUESTION — Sum of Single-Digit Numbers
+"""
+Problem Statement
+You are given an integer n, followed by n integers.
+
+Your task is to:
+filter only the numbers that have exactly one digit
+and compute their sum
+Finally, print the sum.
+
+Input Format
+n
+num1
+num2
+num3
+...
+numn
+
+Where:
+n is a positive integer
+each num is an integer (can be positive or negative)
+
+Output Format
+Print a single integer — the sum of all single-digit numbers.
+
+Example
+Input
+5
+3
+12
+7
+100
+-4
+
+Output
+6
+
+Explanation:
+Single-digit numbers are: 3, 7, -4
+Sum = 3 + 7 + (-4) = 6
+
+Rules (IMPORTANT - Read Carefully)
+A number is considered single-digit if:
+its absolute value is less than 10
+example: -4, 0, 7 are valid
+example: 12, 100, -15 are NOT valid
+
+You must:
+read inputs using a loop
+use filtering logic
+use aggregation (sum)
+
+Do NOT:
+use built-in functions like sum() on a list
+store all numbers in a list first (process one by one)
+Process and add inside the loop."""
+
+n = int(input("enter the integer:"))
+num_list = []                       # store list of entered number
+sum_single = 0                      # store final result
+
+for i in range(n):
+    x = int(input(f"Enter the number {i+1}: "))     # we can write f-string inside input too
+    num_list.append(x)              # store each number into the list
+    
+for num in num_list:
+    if abs(num) < 10:               # codition for single digit number including negative sign
+        sum_single += num           # add single digit 
+print(sum_single)
+
+#===================================================
+# 🟦 QUESTION — Double and Concatenate Strings
+"""
+Problem Statement
+You are given an integer n, followed by n strings.
+
+Your task is to:
+double each string (repeat it twice)
+add a single space after each doubled string
+and concatenate everything into one final string
+Finally, print the resulting string.
+
+Input Format
+n
+s1
+s2
+s3
+...
+sn
+
+Where:
+n is a positive integer
+each s is a string (may contain alphabets only, no spaces)
+
+Output Format
+Print a single line — the concatenated result.
+Each doubled string must be followed by one space.
+
+Example
+Input
+
+3
+ab
+x
+cat
+
+Output
+abab xx catcat 
+
+(Notice the space at the end — it is required)
+
+Rules (IMPORTANT - Read Carefully)
+You must:
+read input using a loop
+double each string using string operations
+aggregate into one variable
+
+Do NOT:
+store all strings in a list and then join
+use join()
+print inside the loop
+
+You must:
+transform → then aggregate → then print once"""
+
+n_s = int(input("enter the integer:"))
+concat_result = ""                  # store final result
+
+for i in range(n_s):
+    x_s = input(f"Enter string {i+1}:")
+    doub_str = 2*x_s            
+    concat_result = concat_result + " " + doub_str  # ⁉️ This gives space at starting 
+    # concat_result = doub_str + " " + concat_result    # this is correct but reverse the order
+print(concat_result)
+
+
