@@ -613,14 +613,11 @@ Process and add inside the loop."""
 n = int(input("enter the integer:"))
 num_list = []                       # store list of entered number
 sum_single = 0                      # store final result
-
+# without storing the value in list is more professional becuase it save memory.
 for i in range(n):
     x = int(input(f"Enter the number {i+1}: "))     # we can write f-string inside input too
-    num_list.append(x)              # store each number into the list
-    
-for num in num_list:
-    if abs(num) < 10:               # codition for single digit number including negative sign
-        sum_single += num           # add single digit 
+    if abs(x) < 10:
+        sum_single += x
 print(sum_single)
 
 #===================================================
