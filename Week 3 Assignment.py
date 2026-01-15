@@ -680,9 +680,10 @@ concat_result = ""                  # store final result
 
 for i in range(n_s):
     x_s = input(f"Enter string {i+1}:")
-    doub_str = 2*x_s            
-    concat_result = concat_result + " " + doub_str  # ⁉️ This gives space at starting 
-    # concat_result = doub_str + " " + concat_result    # this is correct but reverse the order
+    doub_str = 2*x_s      
+    # This add space after double string because intially conca-result is empty, so this avoid leading space      
+    concat_result = concat_result +  doub_str + " "  
+    # concat_result = concat_result  + " " +  doub_str  # this is correct but reverse the order
 print(concat_result)
 
 
