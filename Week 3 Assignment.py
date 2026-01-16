@@ -539,6 +539,7 @@ basic math"""
     8) add this to result 
 9) print the result
 """
+'''
 
 alp = "abcdefghijklmnopqrstuvwxyz"
 word = input("Enter word:")             # cons: it only accept lowercase, not uppercase
@@ -551,6 +552,7 @@ for char in word:
     result += new_char
 
 print(result)
+'''
 
 # ======================================================================
 # 🟦 QUESTION — Sum of Single-Digit Numbers
@@ -609,7 +611,7 @@ Do NOT:
 use built-in functions like sum() on a list
 store all numbers in a list first (process one by one)
 Process and add inside the loop."""
-
+'''
 n = int(input("enter the integer:"))
 num_list = []                       # store list of entered number
 sum_single = 0                      # store final result
@@ -619,6 +621,7 @@ for i in range(n):
     if abs(x) < 10:
         sum_single += x
 print(sum_single)
+'''
 
 #===================================================
 # 🟦 QUESTION — Double and Concatenate Strings
@@ -674,7 +677,7 @@ print inside the loop
 
 You must:
 transform → then aggregate → then print once"""
-
+'''
 n_s = int(input("enter the integer:"))
 concat_result = ""                  # store final result
 
@@ -685,5 +688,101 @@ for i in range(n_s):
     concat_result = concat_result +  doub_str + " "  
     # concat_result = concat_result  + " " +  doub_str  # this is correct but reverse the order
 print(concat_result)
+'''
 
+
+# =========================================================
+"""🟦 QUESTION — First Word Containing ‘a’
+Problem Statement
+You are given a sentence consisting of multiple words separated by spaces.
+
+Your task is to:
+scan the sentence word by word from left to right
+find the first word that contains the letter 'a' (case-sensitive)
+print that word
+and stop processing further words immediately
+
+Input Format
+sentence
+
+A single line containing the sentence.
+
+Output Format
+Print a single word — the first word that contains the letter 'a'.
+If no word contains 'a', print nothing.
+
+Example 1
+Input
+I love data science
+
+Output
+data
+
+Example 2
+Input
+hello world python
+
+Output
+(no output, because no word contains 'a')
+Rules (IMPORTANT – Read Carefully)
+
+You must:
+split the sentence into words
+loop through words one by one
+check for 'a' in each word
+stop the loop as soon as you find the first match
+
+You must use:
+break to stop the loop
+
+Do NOT:
+collect all matching words
+print multiple words
+use list comprehensions
+
+This is about search + early termination, not filtering all."""
+
+def find_let_a_word(sentence:str) -> str:
+    words = sentence.split()
+    for w in words:
+        if 'a' in w:
+            print(w) 
+            break
+        
+
+
+sent = "I love python data "
+(find_let_a_word(sent))
+
+
+
+#=====================================================
+"""
+Write code that:
+takes input
+splits it by space
+prints index + word
+
+Example input:
+I love python
+
+Output:
+0 I
+1 love
+2 python
+
+Rules:
+must use split()
+must use for
+no enumerate (you are not ready yet)
+manage index manually"""
+
+def give_word_index(sentence):
+    word = sentence.split()
+    for i in range(len(word)):
+         print(i,word[i])
+
+
+sent = " I love python data "
+give_word_index(sent)
 
