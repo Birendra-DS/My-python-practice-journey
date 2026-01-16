@@ -751,7 +751,7 @@ def find_let_a_word(sentence:str) -> str:
         
 
 
-sent = "I love python data "
+sent = "I love python data"
 (find_let_a_word(sent))
 
 
@@ -786,3 +786,73 @@ def give_word_index(sentence):
 sent = " I love python data "
 give_word_index(sent)
 
+#===========================================
+# 🟦 QUESTION — Shift Characters Based on Vowel or Consonant
+"""
+Problem Statement
+You are given a lowercase string sentence.
+
+Your task is to:
+process the string character by character
+
+apply the following transformation:
+    if the character is a vowel (a, e, i, o, u), replace it with the next character in the alphabet
+    otherwise (consonant or any other character), replace it with the previous character in the alphabet
+combine all transformed characters into a new string
+print the final transformed string
+
+Input Format
+sentence
+A single line containing a lowercase string.
+
+Output Format
+Print a single string — the transformed result.
+
+Example
+Input
+cat
+
+Output
+bbs
+
+Explanation
+c → consonant → previous letter → b
+a → vowel → next letter → b
+t → consonant → previous letter → s
+Final result: bbs
+(Example output may vary depending on interpretation; follow the rules strictly.)
+
+Rules (IMPORTANT – Read Carefully)
+You must:
+    loop through the string character by character
+    check whether a character is a vowel
+    use character shifting logic
+    aggregate the result into a single string
+    print once at the end
+
+You must use:
+    ord() to convert character → ASCII
+    chr() to convert ASCII → character
+
+Do NOT:
+    use lists and join
+    print inside the loop
+    hardcode transformations
+"""
+s = "cat"
+trans_char = ""         # store transformed word
+
+for char in s:
+    if char in "aeiou":     # don't write "a,e,i,o,u" as it also include ","
+        # First ord() convert the char into number and add 1
+        # after that chr() convert those number to character
+        new_char = chr(ord(char) + 1)   # shift forward by character 1
+    else:
+        # we define char because we don't overwrite char, which is change the original value of char
+        new_char = chr(ord(char) - 1)   # shift back by character 1
+
+    trans_char += new_char          # add all transformed character
+print(trans_char)
+
+print(chr(121))
+print(ord("z"))
