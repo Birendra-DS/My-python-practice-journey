@@ -854,5 +854,59 @@ for char in s:
     trans_char += new_char          # add all transformed character
 print(trans_char)
 
-print(chr(121))
-print(ord("z"))
+# ===========================================================
+# 🟦 QUESTION — Nested Loop Accumulation
+"""
+Problem Statement
+You are given a positive integer n.
+
+Your task is to:
+use nested loops
+for each number i from 1 to n-1:
+add the value of i to a running total exactly i times
+after all loops finish, print the final total
+
+Input Format
+n
+
+Where:
+n is an integer greater than 1
+
+Output Format
+Print a single integer — the final accumulated total.
+
+Example
+Input
+5
+
+Output
+30
+
+Explanation (conceptual, not code)
+When i = 1, add 1 → 1 time
+When i = 2, add 2 → 2 times
+When i = 3, add 3 → 3 times
+When i = 4, add 4 → 4 times
+
+The final total is the sum of all these additions.
+
+Rules (IMPORTANT – Read Carefully)
+You must:
+use two loops (nested)
+initialize an accumulator variable (e.g., total)
+update the accumulator inside the inner loop
+
+Do NOT:
+use mathematical formulas
+use lists
+hardcode the output
+
+This problem is about loop behavior, not shortcuts."""
+
+n = int(input())
+total = 0
+for i in range(1,n):        # iterate from 1 to n-1
+    for j in range(i):      # runs the loop i times
+        total += i          # add the value of i exactly i times
+    
+print(total)
