@@ -910,3 +910,79 @@ for i in range(1,n):        # iterate from 1 to n-1
         total += i          # add the value of i exactly i times
     
 print(total)
+
+# =================================================================
+# 🟦 QUESTION — Infinite Loop Analysis (While True)
+""" 
+Problem Statement
+You are given an integer num.
+The following logic is applied:
+A variable i is initialized as -num
+A variable result is initialized to 0
+
+A while True loop is executed with the following rules:
+while True:
+    if i > 5:
+        break
+
+    if i < -5:
+        continue
+
+    result += i
+    i += 2
+
+After the loop terminates, the program prints result.
+
+Your Task
+Determine whether the program:
+terminates normally and prints a value, or
+enters an infinite loop and never prints anything
+If the program terminates, print the final value of result.
+If the program enters an infinite loop, print:
+Infinite Loop
+
+Input Format
+num
+
+Where:
+num is a non-negative integer
+Output Format
+Print the final value of result, if the loop terminates
+
+Otherwise print:
+Infinite Loop
+Important Observations (you must reason about this)
+i is increased only at the end of the loop
+
+If continue executes:
+the increment statement is skipped
+i never changes
+If i remains less than -5, the loop never progresses
+
+Example 1
+Input
+3
+
+Output
+4
+
+Example 2
+Input
+8
+
+Output
+Infinite Loop
+
+Rules (IMPORTANT — Read Carefully)
+
+You must:
+simulate the loop exactly as written
+detect infinite loop conditions logically
+not modify the loop structure
+
+Do NOT:
+use time limits
+use break manually
+rewrite the algorithm
+This problem is about analysis, not optimization."""
+
