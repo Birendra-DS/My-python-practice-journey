@@ -49,6 +49,53 @@ n = int(input())
 # split() separates by spaces result is list of strings
 # convert string to integer
 p = list(map(int,input().split()))
-Q = [0:-1]
+Q = p[0:-1]
 print(Q)
 # ==============================================================
+# 🟦 QUESTION — Print Squares of Numbers
+"""
+Problem Statement
+You are given a list L containing positive integers.
+Your task is to print the square of each number in the list, one value per line.
+
+Input Format
+n
+L1 L2 L3 ... Ln
+
+Where:
+n is the number of elements
+the second line contains n space-separated integers
+
+Output Format
+Print the square of each number in the list, one per line, in the same order.
+
+Example
+Input
+5
+1 2 3 4 5
+
+Output
+1
+4
+9
+16
+25
+
+Rules (IMPORTANT)
+You may use:
+for x in L
+OR for i in range(len(L))
+You must:
+square the values, not the indices
+print exactly one number per line
+
+Do NOT:
+modify the list
+use list comprehensions
+pre-store squared values unless required"""
+
+number = list(map(int,input().split())) # store list of values and take input many numbers
+
+for x in number:       # loop over all list element
+    print(x**2)
+
