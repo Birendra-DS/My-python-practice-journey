@@ -45,3 +45,10 @@ P[:-1]
 
 Your program may use any one of them."""
 
+n = int(input())
+# split() separates by spaces result is list of strings
+# convert string to integer
+p = list(map(int,input().split()))
+Q = [0:-1]
+print(Q)
+# ==============================================================
