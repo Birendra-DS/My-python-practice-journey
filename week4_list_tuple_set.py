@@ -99,3 +99,53 @@ number = list(map(int,input().split())) # store list of values and take input ma
 for x in number:       # loop over all list element
     print(x**2)
 
+# =============================================
+
+""" 🟦 QUESTION — Filter Even Numbers from a List
+Problem Statement
+You are given a list of integers named nums.
+
+Your task is to:
+filter all even numbers
+preserve their original order
+store them in a new list called even_nums
+finally, print the list even_nums
+
+Input Format
+n
+num1 num2 num3 ... numn
+
+Where:
+n is the number of elements
+the second line contains n space-separated integers
+Output Format
+Print the list even_nums.
+
+Example
+Input
+
+6
+3 4 7 10 11 8
+
+Output
+[4, 10, 8]
+
+Rules (IMPORTANT)
+You must:
+use a loop
+check values, not indices
+append only even numbers
+
+Do NOT:
+use list comprehensions
+use slicing
+modify the original list"""
+
+num = list(map(int,input("Enter number:").split()))
+even_lst = []           # store all even number
+
+for i in num:
+    if i % 2 == 0:      # filter all odd number
+        even_lst.append(i)
+print(even_lst)
+
