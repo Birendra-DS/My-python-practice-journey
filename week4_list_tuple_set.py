@@ -149,3 +149,86 @@ for i in num:
         even_lst.append(i)
 print(even_lst)
 
+#====================================================
+""" 
+You are given a list representing a user's shopping cart.
+Each number represents the price of an item.
+
+🧾 Input
+n
+price1 price2 price3 ... pricen
+discount
+
+Where:
+n = number of items
+
+prices are integers
+discount is an integer percentage
+
+🧪 Example Input
+5
+100 200 300 400 500
+10
+
+🎯 Requirements
+
+You must:
+    Store the original cart in a list named cart
+    Create another list named discount_cart
+    Apply discount only on discount_cart
+
+Print:
+
+Original Cart:
+<cart>
+
+Discounted Cart:
+<discount_cart>
+
+✅ Discount rule
+
+If discount = 10:
+new_price = price - (price * discount / 100)
+
+
+Convert final prices to integers.
+❗ IMPORTANT RULES (very important)
+❌ You must NOT modify cart
+❌ You must NOT use slicing like cart[:]
+❌ You must NOT use .copy()
+❌ You must NOT use list()
+
+If you use:
+discount_cart = cart
+Your solution is wrong, even if output looks correct.
+
+⚠️ Why this problem exists
+    This problem tests whether you understand:
+    list mutability
+    aliasing
+    independent memory objects
+    side effects
+
+This exact bug appears in:
+    Django projects
+    backend APIs
+    data pipelines
+    analytics preprocessing
+"""
+cart = list(map(int,input("Enter prices:").split()))
+disc = int(input("Enter the discount:"))
+
+# creating different memory location 
+discount_cart = []
+for price in cart:
+    discount_cart.append(price)
+
+disc_cart_price = []
+for x in discount_cart:
+    new_price = int(x - (x * disc / 100))       # convert price to integer
+    disc_cart_price.append(new_price)
+print(disc_cart_price)
+print(discount_cart)        # # discount_cart refers to a different list object in memory
+print(cart)                 # cart remains unchanged because both lists are independent
+
+# ====================================================
