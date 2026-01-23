@@ -45,12 +45,15 @@ P[:-1]
 
 Your program may use any one of them."""
 
+'''
 n = int(input())
 # split() separates by spaces result is list of strings
 # convert string to integer
 p = list(map(int,input().split()))
 Q = p[0:-1]
 print(Q)
+'''
+
 # ==============================================================
 # 🟦 QUESTION — Print Squares of Numbers
 """
@@ -92,12 +95,13 @@ print exactly one number per line
 Do NOT:
 modify the list
 use list comprehensions
-pre-store squared values unless required"""
-
+pre-store squared values unless required"""\
+'''
 number = list(map(int,input().split())) # store list of values and take input many numbers
 
 for x in number:       # loop over all list element
     print(x**2)
+'''
 
 # =============================================
 
@@ -141,6 +145,7 @@ use list comprehensions
 use slicing
 modify the original list"""
 
+'''
 num = list(map(int,input("Enter number:").split()))
 even_lst = []           # store all even number
 
@@ -148,6 +153,7 @@ for i in num:
     if i % 2 == 0:      # filter all odd number
         even_lst.append(i)
 print(even_lst)
+'''
 
 #====================================================
 """ 
@@ -215,6 +221,7 @@ This exact bug appears in:
     data pipelines
     analytics preprocessing
 """
+'''
 cart = list(map(int,input("Enter prices:").split()))
 disc = int(input("Enter the discount:"))
 
@@ -230,5 +237,63 @@ for x in discount_cart:
 print(disc_cart_price)
 print(discount_cart)        # # discount_cart refers to a different list object in memory
 print(cart)                 # cart remains unchanged because both lists are independent
-
+'''
 # ====================================================
+    # shallow copy and  nested list problem
+A = [[1, 2], [3, 4]]
+B = A.copy()
+A[1][1] = 100           # it change both A and B
+A.append(20)            # it change only A not B beause B is shallow copy of A
+
+print(A)
+print(B)
+# =======================================================
+# Divisibility Check (Boolean Output)
+"""
+Problem Statement
+You are given an integer n.
+Your task is to determine whether n is divisible by 5.
+Input Format
+n
+
+Output Format
+
+Print:
+True
+if n is divisible by 5, otherwise print:
+False
+
+Example 1
+Input
+25
+
+Output
+True
+
+Example 2
+Input
+13
+
+Output
+False
+Rules (IMPORTANT)
+
+You may use:
+if–else
+OR direct boolean expression
+OR conditional (ternary) expression
+Output must be exactly True or False
+Do not print extra text
+"""
+def check_divisiblity_by_5(n):
+    """ check divisibility by five"""
+    if n % 5 == 0:
+        print(True)
+    else:
+        print(False)
+
+n = int(input("Enter number:"))
+(check_divisiblity_by_5(n))
+
+""" or even simple and more pythonic way is """
+print(n%5==0)           # Comparisons already return True or False.
