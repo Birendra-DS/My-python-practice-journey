@@ -285,6 +285,7 @@ OR conditional (ternary) expression
 Output must be exactly True or False
 Do not print extra text
 """
+'''
 def check_divisiblity_by_5(n):
     """ check divisibility by five"""
     if n % 5 == 0:
@@ -297,7 +298,8 @@ n = int(input("Enter number:"))
 
 """ or even simple and more pythonic way is """
 print(n%5==0)           # Comparisons already return True or False.
-
+"""
+'''
 # ===============================================
 # Problem- Even Numbers Using List Comprehension
 """
@@ -332,7 +334,118 @@ print values one by one
 Required Syntax Pattern
 [expression for item in iterable if condition]"""
 
-print("List comprehension problem")
+"""
+print("List comprehension of even number problem")
 n = int(input())
 even_num_lst = [num for num in range(n) if num % 2 == 0]
 print(even_num_lst)
+"""
+# ========================================================
+#  PROBLEM — Filter Words by First and Last Letter
+"""
+Problem Statement
+You are given a list of words L.
+Your task is to create a new list P that contains only those words which:
+begin with the same letter they end with
+
+Input Format
+n
+word1 word2 word3 ... wordn
+
+Where:
+n is the number of words
+all words are lowercase strings without space
+Output Format
+Print the list P.
+
+Example
+Input
+6
+level radar apple civic python noon
+
+Output
+['level', 'radar', 'civic', 'noon']
+
+Rules (IMPORTANT)
+You may solve using:
+list comprehension
+OR a normal loop
+
+You must:
+check the first character
+check the last character
+compare them
+
+Do NOT:
+use string slicing like word[::-1]
+reverse the string
+use external libraries"""
+
+print("First and last element matching problem")
+L = ['level', 'radar', 'civic', 'noon']
+p = []          # store the result words
+for word in L:
+    # check first and last element
+    if word[0] == word[-1]:
+        p.append(word)
+print(p)
+
+# or using list comprehension method
+p_lst = [word for word in L if word[0] == word[-1]]
+print(p_lst)
+
+# ==============================================================
+# 🟦 CODING PROBLEM — Pairs with Sum Equal to 100
+"""
+Problem Statement
+You are given an integer S (sum value).
+Your task is to generate all pairs (x, y) such that:
+x + y = S
+x > 0
+y > 0
+Store all valid pairs as tuples inside a list.
+
+Input Format
+S
+
+Output Format
+Print a list of tuples:
+[(x1, y1), (x2, y2), ...]
+
+Example
+Input
+100
+
+Output
+[(1, 99), (2, 98), (3, 97), ..., (99, 1)]
+
+Rules (IMPORTANT)
+You may solve this problem in any one of the following ways:
+nested loops
+nested list comprehension
+optimized single-loop logic
+
+But you must follow all constraints.
+Constraints
+1 ≤ x < S
+y = S − x
+both values must be positive
+
+Efficiency Requirement
+After solving it once, try to answer:
+Can this be solved without checking all pairs?
+This question separates average students from strong programmers."""
+
+s = 100
+rslt = []
+for x in range(s):
+    for y in range(s):
+        if x + y == s:
+            rslt.append((x,y))
+print(rslt)
+
+print("\nFastest method)\n")
+final = []
+for x in range(s):
+    final.append((x, s-x))
+print(final)
