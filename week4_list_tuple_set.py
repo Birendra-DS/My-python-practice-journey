@@ -297,3 +297,42 @@ n = int(input("Enter number:"))
 
 """ or even simple and more pythonic way is """
 print(n%5==0)           # Comparisons already return True or False.
+
+# ===============================================
+# Problem- Even Numbers Using List Comprehension
+"""
+Problem Statement
+You are given an integer n.
+Your task is to create a list that contains all even numbers from 0 to n − 1.
+You must use list comprehension.
+
+Input Format
+n
+
+Output Format
+Print the list of even numbers.
+
+Example
+Input
+10
+
+Output
+[0, 2, 4, 6, 8]
+
+Rules (IMPORTANT)
+You must use list comprehension
+
+You must include:
+an iteration (for)
+a condition (if)
+
+Do NOT:
+use a normal loop with append
+print values one by one
+Required Syntax Pattern
+[expression for item in iterable if condition]"""
+
+print("List comprehension problem")
+n = int(input())
+even_num_lst = [num for num in range(n) if num % 2 == 0]
+print(even_num_lst)
