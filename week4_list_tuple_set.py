@@ -438,14 +438,63 @@ This question separates average students from strong programmers."""
 
 s = 100
 rslt = []
-for x in range(s):
-    for y in range(s):
+for x in range(1,s):    # range is from 1 to not include 0
+    for y in range(1,s):
         if x + y == s:
             rslt.append((x,y))
 print(rslt)
 
 print("\nFastest method)\n")
 final = []
-for x in range(s):
+for x in range(1,s):
     final.append((x, s-x))
 print(final)
+
+# ==============================================
+# PROBLEM — Pairs with Sum = S and Constraint (x ≤ y)
+""" 
+Problem Statement
+You are given an integer S.
+Your task is to generate all pairs (x, y) such that:
+x + y = S
+x > 0
+y > 0
+x ≤ y
+Store all valid pairs as tuples inside a list.
+
+Input Format
+S
+
+Output Format
+Print a list of tuples:
+[(x1, y1), (x2, y2), ...]
+
+Example
+Input
+100
+
+Output
+[(1, 99), (2, 98), (3, 97), ..., (50, 50)]
+Explanation (conceptual only)
+Pairs like (60, 40) are not allowed
+because x > y
+Pairs like (40, 60) are allowed
+(50, 50) is valid because x ≤ y
+Rules (IMPORTANT)
+
+You may solve this problem using:
+nested loops
+nested list comprehension
+optimized single-loop logic
+
+But your solution must:
+include the condition x ≤ y
+not generate duplicate mirror pairs"""
+print("2nd part")
+sm = 100
+rl = []
+for x in range(1,s):
+    for y in range(1,s):
+        if x <= y:
+            rl.append((x,y))
+print("\n",rl)
