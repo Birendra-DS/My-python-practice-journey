@@ -498,3 +498,63 @@ for x in range(1,sm):
     if x <= y and x + y == sm:
         rl.append((x,y))
 print(rl)
+# ===================================================================
+
+"""
+PROBLEM — Create a Matrix of Zeros
+Problem Statement
+
+You are given two integers:
+rows
+cols
+
+Your task is to create a 2-D matrix with:
+rows number of rows
+cols number of columns
+Every element of the matrix must be 0.
+
+Input Format
+rows cols
+Output Format
+Print the matrix as a list of lists.
+
+Example
+Input
+3 3
+
+Output
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]
+Rules (IMPORTANT)
+
+You must:
+use nested loops
+create a new inner list for each row
+append values manually
+You must NOT use
+
+❌ list comprehension
+❌ multiplication like [[0]*cols]*rows
+❌ numpy
+❌ external libraries
+
+(These cause aliasing bugs.)
+Key Requirement
+Each row must be an independent list object.
+"""
+rw = int(input("Enter rows:"))
+cl = int(input("Enter columns:"))
+mat = []                # this will store rows
+
+for i in range(rw):     # this loop runs once per row
+    # for each row create a new list
+    row = []            # new inner list
+    # each row must have col elemnts
+    for j in range(cl):
+        row.append(0)   # fill that row with zeroes
+    # Add that row to matrix
+    mat.append(row)
+
+print(mat)
+#===========================================
