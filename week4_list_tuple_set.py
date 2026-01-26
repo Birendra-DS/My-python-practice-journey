@@ -493,8 +493,8 @@ not generate duplicate mirror pairs"""
 print("2nd part")
 sm = 100
 rl = []
-for x in range(1,s):
-    for y in range(1,s):
-        if x <= y:
-            rl.append((x,y))
-print("\n",rl)
+for x in range(1,sm):
+    y = sm-x            # y is directly calculated using x value without looping again
+    if x <= y and x + y == sm:
+        rl.append((x,y))
+print(rl)
