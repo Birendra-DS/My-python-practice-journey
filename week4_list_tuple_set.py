@@ -593,13 +593,13 @@ hardcode values"""
 
 L = ['one', 'two', 'one', 'three', 'one']
 freq = {}
-'''
+
 for word in L:
     #word = word.count(word)
     freq[word] = L.count(word)
 
 print(freq)
-'''
+
 L = ['one', 'two', 'one', 'three', 'one']
 freq = {}
     # Method 2: 
