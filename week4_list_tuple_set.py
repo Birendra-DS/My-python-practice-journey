@@ -558,3 +558,55 @@ for i in range(rw):     # this loop runs once per row
 
 print(mat)
 #===========================================
+# Problem - Word Frequency Counter
+"""
+(Dictionary Comprehension Practice)
+
+🧠 Problem Statement
+You are given a list of words.
+Your task is to create a dictionary that stores:
+each unique word as a key
+the number of times that word appears in the list as its value
+
+📥 Input
+A list of strings:
+L = ['one', 'two', 'one', 'three', 'one']
+
+📤 Output
+A dictionary showing frequency of each word:
+{'one': 3, 'two': 1, 'three': 1}
+
+✅ Rules
+You must:
+use dictionary comprehension
+count how many times each word appears
+store the result in a dictionary named freq
+
+You may use:
+list.count()
+comprehension syntax
+
+Do NOT:
+manually create keys
+write multiple loops
+hardcode values"""
+
+L = ['one', 'two', 'one', 'three', 'one']
+freq = {}
+'''
+for word in L:
+    #word = word.count(word)
+    freq[word] = L.count(word)
+
+print(freq)
+'''
+L = ['one', 'two', 'one', 'three', 'one']
+freq = {}
+    # Method 2: 
+for wrd in L:
+    if wrd in freq:
+        freq[wrd] += 1
+    else:
+        freq[wrd] = 1
+# count word frequency in single pass (O(n))
+print(freq)
