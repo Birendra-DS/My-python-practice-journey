@@ -610,3 +610,59 @@ for wrd in L:
         freq[wrd] = 1
 # count word frequency in single pass (O(n))
 print(freq)
+
+#=================================================
+# Dictionary Key–Value Reversal
+"""
+🧠 Problem Statement
+You are given a dictionary P where:
+keys are strings
+values are unique integers
+Your task is to reverse the dictionary, meaning:
+dictionary keys become values
+dictionary values become keys
+
+📥 Input
+A dictionary:
+P = {
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4
+}
+
+📤 Output
+A reversed dictionary:
+{
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four'
+}
+✅ Requirements
+
+You must:
+use dictionary comprehension
+iterate through the dictionary
+reverse key–value pairs
+
+❌ Do NOT
+hardcode the output
+manually type the reversed dictionary
+use external libraries"""
+
+P_org = {
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4
+}
+p_rev = {}
+for key, value in P_org.items():    # .items() return both key and value pairs as  tuple format
+    p_rev[value] = key
+
+print(p_rev)
+
+   
+
+#print(p_r)
