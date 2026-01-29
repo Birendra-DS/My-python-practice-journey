@@ -543,6 +543,8 @@ You must NOT use
 Key Requirement
 Each row must be an independent list object.
 """
+
+'''
 rw = int(input("Enter rows:"))
 cl = int(input("Enter columns:"))
 mat = []                # this will store rows
@@ -557,6 +559,7 @@ for i in range(rw):     # this loop runs once per row
     mat.append(row)
 
 print(mat)
+'''
 #===========================================
 # Problem - Word Frequency Counter
 """
@@ -663,6 +666,60 @@ for key, value in P_org.items():    # .items() return both key and value pairs a
 
 print(p_rev)
 
-   
+# =============================================
+# Problem - — Dictionary of Prime Numbers
+""" 
+🧠 Problem Statement
+You are given a range of integers from 2 to 100.
+Your task is to create a dictionary where:
+each number is a key
+the value is a boolean indicating whether the number is prime
 
-#print(p_r)
+📥 Input
+No user input.
+The numbers are:
+2 to 100 (inclusive)
+
+📤 Output
+A dictionary of the form:
+{
+    2: True,
+    3: True,
+    4: False,
+    5: True,
+    ...
+    100: False
+}
+✅ Rules
+
+You must:
+write a function is_prime(n)
+return True if n is prime
+return False otherwise
+generate a dictionary mapping numbers → prime status
+
+❌ Do NOT
+use any built-in prime libraries
+hardcode answers
+manually write each number"""
+
+def is_prime(n):
+   """return True if n is prime, otherwise False"""
+   if n < 2:
+       return False
+   
+   for i in range(2,n):
+       if n % i == 0:       # check if n is divisible by any number from 2 to n-1
+           return False
+    # return True only after checking whole loop
+   return True             # it is prime
+
+
+prime = {}              # store prime number in bool value
+for i in range(2,101):
+    prime[i] = is_prime(i)
+
+print(prime)
+
+  
+   
