@@ -721,5 +721,8 @@ for i in range(2,101):
 
 print(prime)
 
+# By dictionary comprehendion method
+prime_dict = {x: is_prime(x) for x in range(2,101)}
+print(f"Dictionary Method {prime_dict}")
   
    
