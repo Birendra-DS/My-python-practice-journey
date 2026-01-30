@@ -724,5 +724,48 @@ print(prime)
 # By dictionary comprehendion method
 prime_dict = {x: is_prime(x) for x in range(2,101)}
 print(f"Dictionary Method {prime_dict}")
-  
-   
+
+# ===========================================================
+# Problem  — Function to Copy a List
+"""
+🧠 Problem Statement
+You are given a list P.
+Your task is to write a function named copy_list(P) that:
+creates a new list
+copies all elements of P into the new list
+returns the copied list
+The copied list must be independent of the original list.
+
+📥 Input
+A list P containing elements of any type.
+
+Example:
+P = [10, 20, 30, 40]
+
+📤 Output
+A new list containing the same elements:
+[10, 20, 30, 40]
+
+✅ Requirements
+
+You must:
+create an empty list Q
+use a loop
+copy elements one by one
+return Q
+
+❌ Do NOT
+use list.copy()
+use slicing (P[:])
+use deepcopy
+assign directly (Q = P)
+"""
+def copy_list(P):
+    Q = []              # store copied element of list p
+    for i in range(len((P))):
+        Q.append(P[i])
+    return Q
+
+P = [10, 20, 30, 40]
+print(copy_list(P))
+    
