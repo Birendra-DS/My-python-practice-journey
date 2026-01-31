@@ -768,4 +768,106 @@ def copy_list(P):
 
 P = [10, 20, 30, 40]
 print(copy_list(P))
+
+# ======================================================
+# Problem - Distance Function with Default Argument
+"""
+🧠 Problem Statement
+You are asked to write a function named:
+distance(x, y, metric)
+
+The function calculates the distance of a point (x, y) from the origin (0, 0).
+
+📌 Distance Metrics
+1️⃣ Manhattan distance
+|x| + |y|
+
+2️⃣ Euclidean distance
+√(x² + y²)
+
+🎯 Task Requirements
+The parameter metric must have a default value
+If no metric is provided, the function must compute Manhattan distance
+If metric is "euclidean", compute Euclidean distance
+If metric is "manhattan", compute Manhattan distance
+
+📥 Input Format
+No user input required.
+You must define and call the function in your code.
+
+📤 Output Format
+Print the returned distance value.
+
+🧪 Example Calls
+print(distance(3, 4))
+print(distance(3, 4, "euclidean"))
+
+Expected Output
+7
+5.0
+
+Explanation:
+distance(3, 4) → Manhattan → |3| + |4| = 7
+distance(3, 4, "euclidean") → √(9 + 16) = 5
+
+✅ Rules (IMPORTANT)
+You must:
+define the function correctly
+place the default argument after non-default arguments
+use conditional logic inside the function
+return the computed value
+
+❌ Do NOT
+place default argument before non-default arguments
+❌ def distance(metric='manhattan', x, y):
+hardcode outputs
+use external math libraries"""
+
+def distance(x,y,metric = 'manhattan'):  # default matric is Manhattan
+    """ Return distance of (x,y) from origin using given matric"""
+    if metric == 'euclidean':
+        # condition for euclidian: √(x^2 + y^2)
+        return (x**2 + y**2)**0.5
+    elif metric == "manhattan":
+        # condition for manhattan matric: |x| + |y|
+        return (abs(x)+abs(y))
+    else:
+        # raise ValueError("Invalid metric")    # This will stop further code execution too
+        print("ValueError: Invalid metric")
     
+print(distance(3,4,'euclidian'))
+
+# =================================================
+# Problem- Write a code to find the frequency of words appear and then find max word appear
+
+def freq_of_word(text):
+    freq = {}
+    words = text.split()
+    for word in words:
+        if word in freq:
+            freq[word] += 1
+        else:
+            freq[word] = 1
+
+    max_word = max(freq,key = freq.get)     # ⁉️ doubt in this
+        
+    return freq, max_word
+    
+
+text = "apple banana apple orange banana apple"
+print(freq_of_word(text))
+
+# =============================================
+# Problem - Find two number that add up to target
+
+""" # Test
+numbers = [2, 7, 11, 15, 3, 6]
+print(two_sum(numbers, 9))   # Output: (2, 7)
+print(two_sum(numbers, 10))  # Output: (7, 3)
+print(two_sum(numbers, 100)) # Output: None
+def two_sum(numbers, target):
+    Find two numbers that sum to target
+"""
+
+
+#========================================================
