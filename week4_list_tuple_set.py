@@ -841,16 +841,21 @@ print(distance(3,4,'euclidian'))
 # Problem- Write a code to find the frequency of words appear and then find max word appear
 
 def freq_of_word(text):
+    # dictinary to store word with frequency
     freq = {}
+    # split sentence into individual word
     words = text.split()
+    # iterate through each word
     for word in words:
         if word in freq:
-            freq[word] += 1
-        else:
-            freq[word] = 1
+            freq[word] += 1         # increase count if word already exists
+        else:                       
+            freq[word] = 1          # add word with count 1
 
+    # find the word with maximum frequency
+    # key = freq.get means comparing is done using dictionary value, not using string ASCII value
     max_word = max(freq,key = freq.get)     # ⁉️ doubt in this
-        
+    
     return freq, max_word
     
 
