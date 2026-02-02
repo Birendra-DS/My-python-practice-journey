@@ -873,6 +873,15 @@ print(two_sum(numbers, 100)) # Output: None
 def two_sum(numbers, target):
     Find two numbers that sum to target
 """
+def two_sum(numbers, target):
+    for num in numbers:
+        for n in numbers:
+            if num + n == target:
+                return (num,n)
+
+numbers = [2, 7, 11, 15, 3, 6]
+print(two_sum(numbers, 9))
+
 
 
 #========================================================
