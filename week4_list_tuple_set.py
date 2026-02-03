@@ -874,13 +874,34 @@ def two_sum(numbers, target):
     Find two numbers that sum to target
 """
 def two_sum(numbers, target):
-    for num in numbers:
-        for n in numbers:
-            if num + n == target:
-                return (num,n)
+    """
+    Find two numbers that sum to target
+    """
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            if numbers[i] + numbers[j] == target:
+                return (i,j)
+        
+        return None
 
 numbers = [2, 7, 11, 15, 3, 6]
 print(two_sum(numbers, 9))
+
+
+# Dictionary method
+def two_sum_prb(numbs,target):
+    seen = {}
+
+    for num in range(len(numbs)):
+        complement = target - numbs[num]
+        if complement in seen:            
+            return (complement, numbs[num])
+        
+        seen[numbs[num]] = 1
+
+    return None
+num = [2,3,2,4,2,1,7]
+print(two_sum_prb(num, 9))
 
 
 
