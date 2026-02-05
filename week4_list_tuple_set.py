@@ -906,3 +906,170 @@ print(two_sum_prb(num, 9))
 
 
 #========================================================
+"""
+MASTER CODING PROBLEM — Exploring Python Collections (Beginner-Friendly)
+🧠 Problem Statement
+
+You are given three collections:
+
+a list of integers
+
+a set of integers
+
+a tuple of integers
+
+Your task is to write a Python program that explores:
+
+empty vs singleton collections
+
+truthy vs falsy values
+
+min, max, sum, length
+
+sorting and reversing
+
+indexing and slicing
+
+membership checking
+
+concatenation of iterables
+
+This problem is designed to make you learn by writing code, not by reading theory.
+
+📥 Given Data (Use exactly this)
+int_iterable = [5, 2, 9, 1, 5]
+some_collection = (10, 20, 30, 40, 50)
+some_value = 30
+
+some_iterable = [1, 2]
+another_iterable = (3, 4)
+yet_another_iterable = {5, 6}
+
+string_iterable = ["apple", "banana", "cherry"]
+
+🎯 Tasks (You must implement all of these)
+1️⃣ Create basic collections
+
+Create:
+
+an empty list
+
+an empty set
+
+an empty tuple
+
+Then create:
+
+a singleton list
+
+a singleton set
+
+a singleton tuple
+
+Print all of them.
+
+2️⃣ Truthy vs falsy collections
+
+Create:
+
+one list that is falsy when passed to bool()
+
+one tuple that is truthy
+
+Print:
+
+print(bool(your_list))
+print(bool(your_tuple))
+
+3️⃣ Basic aggregate operations
+
+From int_iterable, compute and print:
+
+minimum value
+
+maximum value
+
+sum of elements
+
+length
+
+sorted list (ascending)
+
+sorted list (descending)
+
+4️⃣ Reversing (only if possible)
+
+Check whether int_iterable can be reversed using reversed().
+
+If yes:
+
+create a list of reversed elements
+
+Otherwise:
+
+sort ascending and then reverse
+
+Print the result.
+
+5️⃣ Indexing and slicing
+
+From some_collection:
+
+try to get the third last element
+
+try to get elements at odd indices
+
+If the operation is not possible, store None.
+
+Print both results.
+
+6️⃣ Membership test
+
+Check whether some_value is present in some_collection.
+
+Print True or False.
+
+7️⃣ Membership in even indices (only if ordered)
+
+If some_collection is ordered:
+
+check whether some_value appears at an even index
+
+Else:
+
+print None
+
+8️⃣ Concatenation of iterables
+
+Combine:
+
+some_iterable
+another_iterable
+yet_another_iterable
+
+
+into one list and print it.
+
+9️⃣ String concatenation
+
+If string_iterable is ordered:
+
+join all strings with "-" in between
+
+Else:
+
+sort first, then join
+
+Print the final string.
+
+❗ Rules (IMPORTANT)
+
+You must:
+
+use basic Python only
+
+use loops and built-in functions (min, max, sum, len, sorted, reversed, bool)
+
+not use advanced libraries
+
+not skip any part"""
