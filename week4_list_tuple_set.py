@@ -1073,3 +1073,32 @@ use loops and built-in functions (min, max, sum, len, sorted, reversed, bool)
 not use advanced libraries
 
 not skip any part"""
+
+
+int_iterable = [5, 2, 9, 1, 5]
+some_collection = (10, 20, 30, 40, 50)
+some_value = 30
+
+some_iterable = [1, 2]
+another_iterable = (3, 4)
+yet_another_iterable = {5, 6}
+
+string_iterable = ["apple", "banana", "cherry"]
+
+# Task 1: Empty vs Singleton Collections
+emp_lst = []
+emp_set = set()     # empty set
+    # emp_set = {} -> this creates an empty dictionary
+emp_tup = ()
+sing_lst = [2]
+sing_set = {2}
+sing_tup = (2,)     # used the trailing comma for tuple. Without it, Python treats (2) as just int not tuple.
+
+# printing all of these
+print(emp_lst, type(emp_lst))
+print(emp_set, type(emp_set))
+print(emp_tup, type(emp_tup))
+
+print(sing_lst, type(sing_lst))
+print(sing_tup, type(sing_tup))
+print(sing_set, type(sing_set))
