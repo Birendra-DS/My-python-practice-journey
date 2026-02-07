@@ -1102,3 +1102,16 @@ print(emp_tup, type(emp_tup))
 print(sing_lst, type(sing_lst))
 print(sing_tup, type(sing_tup))
 print(sing_set, type(sing_set))
+
+# Task 2 Truty and Fasly
+falsy_list = []
+falsy_tup = ()
+truthy_list = [2,3]
+truthy_tup = (2,)
+
+print(bool(falsy_list))       # it is falsy list: empty
+print(bool(falsy_tup))        # it is falsy tuple: empty
+print(bool(truthy_list))       # it is truthy list: contain element
+print(bool(truthy_tup))         # it is truthy tuple contain element with comma
+
+# Task 3 — Aggregates on int_iterable
