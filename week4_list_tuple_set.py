@@ -1123,5 +1123,35 @@ print(b)
 c = a.sort()
 print(c)
 
-
 # Task 3 — Aggregates on int_iterable
+""" 
+from int_iterable = [5, 2, 9, 1, 5]
+print:
+    minimum value
+    maximum value
+    sum of elements
+    length
+    sorted list (ascending)
+    sorted list (descending)
+
+Constraints (don’t ignore these):
+    Do not modify int_iterable
+    Use only: min, max, sum, len, sorted
+    For descending, use sorted(..., reverse=True)
+    (No .sort() allowed here)
+"""
+min_int_lst = min(int_iterable)
+max_int_lst = max(int_iterable)
+sum_int_lst = sum(int_iterable)        
+len_int_lst = len(int_iterable)
+sort_asnd_lst = sorted(int_iterable)    # sorted() return a new list and doesn't modify the int_iterable(original)
+sort_dsnd_lst = sorted(int_iterable, reverse = True)    # reverse = True sort in descending order
+
+
+print(f"min:{min_int_lst}")
+print(f"max:{max_int_lst}")
+print(f"sum:{sum_int_lst}")
+print(f"length of list:{len_int_lst}")
+print(f"asscending order:{sort_asnd_lst}")
+print(f"descending order:{sort_dsnd_lst}")
+
