@@ -1114,4 +1114,14 @@ print(bool(falsy_tup))        # it is falsy tuple: empty
 print(bool(truthy_list))       # it is truthy list: contain element
 print(bool(truthy_tup))         # it is truthy tuple contain element with comma
 
+# sorting the list
+a = [3, 1, 2]
+b = sorted(a)
+print(a)
+print(b)
+
+c = a.sort()
+print(c)
+
+
 # Task 3 — Aggregates on int_iterable
