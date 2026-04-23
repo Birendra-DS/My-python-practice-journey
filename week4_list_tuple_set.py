@@ -1154,4 +1154,3 @@ print(f"sum:{sum_int_lst}")
 print(f"length of list:{len_int_lst}")
 print(f"asscending order:{sort_asnd_lst}")
 print(f"descending order:{sort_dsnd_lst}")
-
